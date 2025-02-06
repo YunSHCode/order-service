@@ -10,6 +10,7 @@ COPY . /myapp
 #gradle은 설치되어있는 gradle을 이용해서 빌드, gradlew는 프로젝트에 포함된 gradle을 이용
 #CICD에서는 gradlew를 이용해서 작업
 #-x test -> test를 제외하고 작업
+RUN chmod +x gradlew
 RUN ./gradlew clean build --no-daemon -x test
 
 #자바를 실행하기 위한 작업
